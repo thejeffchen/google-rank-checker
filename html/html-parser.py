@@ -11,81 +11,30 @@ for f in files:
 
 print(html_files)
 
+# Create new .csv file
+with open('keyword_rankings.csv', 'w') as myfile:
+    writer = csv.writer(myfile, delimiter=',')
+    writer.writerow(['Source', 'Rank 1', 'Rank 2', 'Rank 3', 'Rank 4', 'Rank 5', 'Rank 6', 'Rank 7', 'Rank 8', 'Rank 9', 'Rank 10', 'Rank 11', 'Rank 12', 'Rank 13', 'Rank 14', 'Rank 15', 'Rank 16', 'Rank 17', 'Rank 18', 'Rank 19', 'Rank 20'])
+    myfile.close()
+
+# Append each row to the .csv file
 for each_file in html_files:
-    with open(each_file, 'rb') as file:
-        print(each_file)
-        soup = BeautifulSoup(file, "lxml")
-        results = soup.find_all("h3", class_="r")
-        list_of_ranks = []
-        # list_of_ranks = {
-        #     'keyword': '',
-        #     'source 1': '',
-        #     'source 2': '',
-        #     'source 3': '',
-        #     'source 4': '',
-        #     'source 5': '',
-        #     'source 6': '',
-        #     'source 7': '',
-        #     'source 8': '',
-        #     'source 9': '',
-        #     'source 10': '',
-        #     'source 11': '',
-        #     'source 12': '',
-        #     'source 12': '',
-        #     'source 13': '',
-        #     'source 14': '',
-        #     'source 15': '',
-        #     'source 16': '',
-        #     'source 17': '',
-        #     'source 18': '',
-        #     'source 19': '',
-        #     'source 20': '',
-        #     }
-        # n = 1
-        for each_result in results:
-            each_meta_title = each_result.text
-            link = each_result.find('a')
-            link = link.get('href')
-            list_of_ranks.append(link + ' / ' + each_meta_title)
-            # list_of_ranks['source ' + str(n)] - link + ' / ' + each_meta_title
-            # n += 1
-        print(list_of_ranks)
+    if each_file.endswith(".html"):
+        with open(each_file, 'rb') as file:
+            print(each_file)
+            soup = BeautifulSoup(file, "lxml")
+            results = soup.find_all("h3", class_="r")
+            list_of_ranks = []
+            
+            for each_result in results:
+                each_meta_title = each_result.text
+                link = each_result.find('a')
+                link = link.get('href')
+                list_of_ranks.append(link) # Add this back in for Meta Titles: + ' / ' + each_meta_title)
+            print(list_of_ranks)
 
-        with open('keyword_rankings.csv', 'w') as csvfile:
-            # header = [
-            #     'keyword', 
-            #     'source 1',
-            #     'source 2',
-            #     'source 3',
-            #     'source 4',
-            #     'source 5',
-            #     'source 6',
-            #     'source 7',
-            #     'source 8',
-            #     'source 9',
-            #     'source 10',
-            #     'source 11',
-            #     'source 12',
-            #     'source 12',
-            #     'source 13',
-            #     'source 14',
-            #     'source 15',
-            #     'source 16',
-            #     'source 17',
-            #     'source 18',
-            #     'source 19',
-            #     'source 20',
-            #     ]
-            writer = csv.writer(csvfile)
-            # writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
-            # writer.writeheader()
-
-            for each_html_file in html_files:
-                csvfile.write('%s,' % each_html_file)
-                for each_column in list_of_ranks:
-                    csvfile.write('%s,' % each_column)
-                csvfile.write('\n')
-            csvfile.close()
-                # writer.writerow([list_of_ranks])
-                # writer.writerow({'keyword': str(each_html_file), 'source 1': 'Beans'})
+        with open('keyword_rankings.csv', 'a') as csvfile:
+            csvfile.write('%s,' % each_file)
+            for each_column in list_of_ranks:
+                csvfile.write('%s,' % each_column)
+            csvfile.write('\n')
