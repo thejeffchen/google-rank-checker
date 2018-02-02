@@ -30,7 +30,7 @@ for each_file in html_files:
                 each_meta_title = each_result.text
                 link = each_result.find('a')
                 link = link.get('href')
-                list_of_ranks.append(link) # Add this back in for Meta Titles: + ' / ' + each_meta_title)
+                list_of_ranks.append(link) # Add this back in for Meta + ' / ' + each_meta_title)
             print(list_of_ranks)
 
         with open('keyword_rankings.csv', 'a') as csvfile:
