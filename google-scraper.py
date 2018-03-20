@@ -11,20 +11,26 @@ import os
 # Import CSV of keywords to check rank for
 keywords = []
 errors = 0
+counter = 1
 
 with open('keywords.csv', 'rt', encoding="utf8") as f:
     reader = csv.reader(f)
     for row in reader:
         keywords.append(row)
 
-
 for each_keyword in keywords:
     if errors > 5:
         browser.quit()
         break
 
-    driver = webdriver.Chrome()
+    chromedriver = "chromedriver"
+    os.environ["webdriver.chrome.driver"] = chromedriver
+    driver = webdriver.Chrome(chromedriver)
     driver.get("http://www.google.com")
+
+    print(each_keyword)
+    print('keyword number: ' + str(counter))
+    counter += 1
 
     search_box = driver.find_element_by_name("q")
     search_box.send_keys(each_keyword)
@@ -41,6 +47,9 @@ for each_keyword in keywords:
         file.write(html)
 
     time.sleep(random.randint(1,4))
+
+    driver.close()
+    driver.quit()
 
 # Creates an Excel file of the URLs from the first page of SERPs
 
