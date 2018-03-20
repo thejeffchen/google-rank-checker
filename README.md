@@ -2,8 +2,8 @@ Working on the documentation to make this more simple!
 
 Basically, the most important files are:
 
-Google-scraper.py
-keywords.csv
+1) Google-scraper.py
+2) keywords.csv
 
 Steps:
 1) Open keywords.csv and add the keywords you want to check
