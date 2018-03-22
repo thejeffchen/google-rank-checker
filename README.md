@@ -1,8 +1,8 @@
 # Google Rank Checker
 
-This python script will use your computer to check the real time Google search rankings for the first page of search results for a small amount of keywords (I have tested around a few thousand keywords at once with no problems).
+This python script will use your computer to check the real time Google search rankings for the first page of search results for keywords (I have tested around a few thousand keywords at once with no problems).
 
-I wrote this because I work in SEO and need real time rankings and couldn't find any open source projects that worked or had a lot of features I didn't want.
+I wrote this because I work in SEO and needed real time rankings and couldn't find any open source projects that worked or had a lot of features I didn't want. Hopefully others find this useful!
 
 ## Getting Started
 
