@@ -29,11 +29,12 @@ for each_keyword in keywords:
 
     opts = Options()
     opts.add_argument(
-      "user-agent=Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+      "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
       )
     driver = webdriver.Chrome(chromedriver, chrome_options=opts)
 
     driver.get("http://www.google.com")
+
 
     print(each_keyword)
     print('keyword number: ' + str(counter))
