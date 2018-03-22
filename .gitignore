@@ -1,3 +1,4 @@
 /scraper-venv/
 /html
 venv/
+.ipynb_checkpoints
