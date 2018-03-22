@@ -48,6 +48,28 @@ You should see windows opening up and typing in search terms
 
 8) Go to the HTML folder and open up keywords_rankings.csv to get your list of URLs!
 
+## Run Again and Again
+
+1) Open Terminal on Mac (Press 'command + space' and type in 'Terminal')
+
+2) Change directory to google-rank-checker
+```
+cd desktop
+cd google-rank-checker
+```
+
+3) Start the virtual environment
+```
+source venv/bin/activate
+```
+
+4) Run the script
+```
+python3 google-rank-checker.py
+```
+
+5) Go to the HTML folder and open keywords_rankings.csv
+
 ### Important Limitations
 1) This is only for small scale rank checking, it goes at around ~6 terms a minute to be a good citizen of Google. I'm sure you can build out a large scale scraping operation with hundreds of AWS EC2 instances and thousands of proxies, but if you know how to do that, you probably don't need this script.
 2) This only looks at the 1st page of search results. This was built for a specific project and I just needed to look at the first page. I might consider writing something that goes to the other pages, but it isn't built right now.
