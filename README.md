@@ -77,10 +77,11 @@ python3 google-rank-checker.py
 4) This could be limited to personalized and/or local search since it is just opening a normal Google browser. It isn't perfect, but it will give you a good enough measure of approximately what is ranking on the first page.
 
 ### Advanced / Troubleshooting
-* Want to switch user-agent?
+* **Want to switch user-agent?**
+
 On line 32 of google-rank-checker.py you will see an option called "user-agent=...". Right now it is set at Googlebot smartphone. You should be able to change it to whichever user agent you are looking for. Full list of Googlebot user agents here: https://support.google.com/webmasters/answer/1061943?hl=en
 
-* You might need to install Chromedriver: 
+* **Chromedriver Problems?** You might need to install Chromedriver: 
 https://www.kenst.com/2015/03/installing-chromedriver-on-mac-osx/
 
 Note: I also wrote most of the script in a few hours so it isn't perfect, but all feedback is welcome!
