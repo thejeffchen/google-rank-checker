@@ -2,7 +2,7 @@
 
 This python script will use your computer to check the real time Google search rankings for the first page of search results for keywords (I have tested around a few thousand keywords at once with no problems).
 
-I wrote this because I work in SEO and needed real time rankings on demand. A lot of rank tracking software seemed to be outdated or never seemed to match what I was seeing. I also couldn't find any open source projects that worked or had a lot of features I didn't want. Hopefully others find this useful!
+I wrote this because I work in SEO and needed real time rankings from a lot of keywords on demand. A lot of rank tracking software seemed to have outdated rankings or never seemed to match what I was seeing. I also couldn't find any open source projects that worked or had a lot of features I didn't want. Hopefully others find this useful!
 
 ## Getting Started
 
