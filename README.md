@@ -82,6 +82,7 @@ python3 google-rank-checker.py
 On line 32 of google-rank-checker.py you will see an option called "user-agent=...". Right now it is set at the standard Chrome agent. You should be able to change it to whichever user agent you are looking for. Just in case, there is a full list of Googlebot user agents here: https://support.google.com/webmasters/answer/1061943?hl=en
 
 * **Want to use proxies?**
+
 Warning: Use at your own risk. Google seems to be pretty good at detecting proxy usage so only use good proxies. I was stopped fairly quickly.
 
 This system will rotate randomly among however many proxies you put in
