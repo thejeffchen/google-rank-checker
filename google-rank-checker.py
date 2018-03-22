@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import csv
 import time
@@ -8,6 +7,11 @@ from bs4 import BeautifulSoup
 import csv
 import os
 
+# Proxy use - IP:PORT or HOST:PORT, use at your own risk. Google seems to be pretty good at detecting proxy usage, I was stopped fairly quickly. Uncomment lines 40 - 42 to use
+proxy_list = [
+    '185.93.3.123:8080',
+    '194.182.74.151:3128'
+] 
 
 # Import CSV of keywords to check rank for
 keywords = []
@@ -27,14 +31,20 @@ for each_keyword in keywords:
     chromedriver = "chromedriver"
     os.environ["webdriver.chrome.driver"] = chromedriver
 
-    opts = Options()
+    opts = webdriver.ChromeOptions()
     opts.add_argument(
       "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
       )
+
+    # Proxy Use: Uncomment the 3 lines below to enable proxies by removing the '#' symbol
+    # chosen_proxy = random.choice(proxy_list)
+    # print('using proxy: ' + chosen_proxy)
+    # opts.add_argument('--proxy-server=http://%s' % chosen_proxy)
+
+    opts.add_argument('--incognito')
     driver = webdriver.Chrome(chromedriver, chrome_options=opts)
 
     driver.get("http://www.google.com")
-
 
     print(each_keyword)
     print('keyword number: ' + str(counter))
@@ -60,7 +70,6 @@ for each_keyword in keywords:
     driver.quit()
 
 # Creates an Excel file of the URLs from the first page of SERPs
-
 yourpath = 'html'
 html_files = []
 
