@@ -2,7 +2,7 @@
 
 This python script will use your computer to check the real time Google search rankings for the first page of search results for keywords (I have tested around a few thousand keywords at once with no problems).
 
-I wrote this because I work in SEO and needed real time rankings and couldn't find any open source projects that worked or had a lot of features I didn't want. Hopefully others find this useful!
+I wrote this because I work in SEO and needed real time rankings on demand. A lot of rank tracking software seemed to be outdated or never seemed to match what I was seeing. I also couldn't find any open source projects that worked or had a lot of features I didn't want. Hopefully others find this useful!
 
 ## Getting Started
 
@@ -41,7 +41,7 @@ pip3 install -r requirements.txt
 
 7) Run the google scraper script
 ```
-python3 google-scraper.py
+python3 google-rank-checker.py
 ```
 
 You should see windows opening up and typing in search terms
@@ -52,5 +52,10 @@ You should see windows opening up and typing in search terms
 1) This is only for small scale rank checking, it goes at around ~6 terms a minute to be a good citizen of Google. I'm sure you can build out a large scale scraping operation with hundreds of AWS EC2 instances and thousands of proxies, but if you know how to do that, you probably don't need this script.
 2) This only looks at the 1st page of search results. This was built for a specific project and I just needed to look at the first page. I might consider writing something that goes to the other pages, but it isn't built right now.
 3) This only gives you the URLs of the first page of search results. Again, I only needed the URLs for this specific project
+4) This could be limited to personalized and/or local search since it is just opening a normal Google browser. It isn't perfect, but it will give you a good enough measure of approximately what is ranking on the first page.
+
+### Troubleshooting
+You might need to install Chromedriver: 
+https://www.kenst.com/2015/03/installing-chromedriver-on-mac-osx/
 
 Note: I also wrote most of the script in a few hours so it isn't perfect, but all feedback is welcome!
