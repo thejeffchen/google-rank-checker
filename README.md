@@ -79,7 +79,7 @@ python3 google-rank-checker.py
 ### Advanced / Troubleshooting
 * **Want to switch user-agent?**
 
-On line 32 of google-rank-checker.py you will see an option called "user-agent=...". Right now it is set at Googlebot smartphone. You should be able to change it to whichever user agent you are looking for. Full list of Googlebot user agents here: https://support.google.com/webmasters/answer/1061943?hl=en
+On line 32 of google-rank-checker.py you will see an option called "user-agent=...". Right now it is set at the standard Chrome agent. You should be able to change it to whichever user agent you are looking for. Just in case, there is a full list of Googlebot user agents here: https://support.google.com/webmasters/answer/1061943?hl=en
 
 * **Chromedriver Problems?** You might need to install Chromedriver: 
 https://www.kenst.com/2015/03/installing-chromedriver-on-mac-osx/
