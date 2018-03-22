@@ -90,7 +90,9 @@ This system will rotate randomly among however many proxies you put in
 1) Add list of proxies to lines 12, 13, etc. using the format given. Make sure each proxy added is 'IP ADDRESS:PORT' (pay attention to the quotes and add a comma at the end between proxies)
 2) Uncomment lines 40-42 to enable the proxies by removing the '#' sign
 
-* **Chromedriver Problems?** You might need to install Chromedriver: 
+* **Chromedriver Problems?** 
+
+You might need to install Chromedriver: 
 https://www.kenst.com/2015/03/installing-chromedriver-on-mac-osx/
 
 Note: I also wrote most of the script in a few hours so it isn't perfect, but all feedback is welcome!
