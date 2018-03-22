@@ -64,6 +64,7 @@ for each_keyword in keywords:
     with open("html/" + str(each_keyword) + ".html", "w") as file:
         file.write(html)
 
+    # Change the rate that pages are checked here. Original settings chooses a random integer of time between 1 and 4 seconds.
     time.sleep(random.randint(1,4))
 
     driver.close()
