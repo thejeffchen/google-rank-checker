@@ -1,14 +1,50 @@
-Working on the documentation to make this more simple!
+# Google Rank Checker
 
-Basically, the most important files are:
+This python script will use your computer to check the real time Google search rankings for keywords. At a high level it does this by opening up an automated browser (Selenium), google searching the keyword, scraping the HTML, separating the HTML so you get a spreadsheet of all the URLs ranking for a keyword.
 
-1) Google-scraper.py
-2) keywords.csv
+Note: this is relatively slow since we want to be good citizens of Google. Right now it goes at ~6 terms every minute.
 
-Steps:
-1) Open keywords.csv and add the keywords you want to check
-2) Create a new virtual environment
-3) Pip3 install the requirements
-4) Run the google-scraper.py
-4.5) Now the scraper should be running and you should see windows popping up
-5) Go to the html folder and open up keyword_rankings.csv to get your list of URLs!
+Note: I wrote most of the script in a few hours so it isn't perfect, but all feedback is welcome!
+
+## Getting Started
+
+1) Open Terminal on Mac (Press 'command + space' and type in 'Terminal')
+
+2) Install the files on your desktop folder
+
+Type in the terminal:
+
+```
+cd desktop
+```
+
+3) Copy the files from the github
+```
+git clone git@github.com:thejeffchen/google-rank-checker.git
+```
+
+4) Install virtualenv and create a new virtual environment to keep all the packages separate from your desktop 
+
+Instructions: http://sourabhbajaj.com/mac-setup/Python/virtualenv.html
+```
+pip3 install virtualenv
+virtualenv venv
+source venv/bin/activate
+```
+
+5) Open keywords.csv and add the keywords you want to check in column A
+
+6) Install the requirements from the environment
+
+```
+pip3 install -r requirements.txt
+```
+
+7) Run the google scraper script
+```
+python3 google-scraper.py
+```
+
+You should see windows opening up and typing in search terms
+
+8) Go to the HTML folder and open up keywords_rankings.csv to get your list of URLs!
