@@ -90,6 +90,10 @@ This system will rotate randomly among however many proxies you put in
 1) Add list of proxies to lines 12, 13, etc. using the format given. Make sure each proxy added is 'IP ADDRESS:PORT' (pay attention to the quotes and add a comma at the end between proxies)
 2) Uncomment lines 40-42 to enable the proxies by removing the '#' sign
 
+* **Want to change the rate of page checking?**
+
+Change line 68 to vary the amount of time. The default setting picks a random integer between 1 and 4 seconds, but this can be set to any amount you wish. 
+
 * **Chromedriver Problems?** 
 
 You might need to install Chromedriver: 
