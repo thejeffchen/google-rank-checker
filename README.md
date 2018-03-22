@@ -16,9 +16,10 @@ Type in the terminal:
 cd desktop
 ```
 
-3) Copy the files from the github
+3) Copy the files from the github and switch to that folder
 ```
 git clone git@github.com:thejeffchen/google-rank-checker.git
+cd google-rank-checker
 ```
 
 4) Install virtualenv and create a new virtual environment to keep all the packages separate from your desktop 
