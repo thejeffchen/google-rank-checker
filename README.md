@@ -74,13 +74,13 @@ python3 google-rank-checker.py
 
 7) Go to the HTML folder and open keywords_rankings.csv
 
-### Important Limitations
+## Important Limitations
 1) This is only for small scale rank checking, it goes at around ~6 terms a minute to be a good citizen of Google. I'm sure you can build out a large scale scraping operation with hundreds of AWS EC2 instances and thousands of proxies, but if you know how to do that, you probably don't need this script.
 2) This only looks at the 1st page of search results. This was built for a specific project and I just needed to look at the first page. I might consider writing something that goes to the other pages, but it isn't built right now.
 3) This only gives you the URLs of the first page of search results. Again, I only needed the URLs for this specific project
 4) This could be limited to personalized and/or local search since it is just opening a normal Google browser. It isn't perfect, but it will give you a good enough measure of approximately what is ranking on the first page.
 
-### How Exactly Does the Script Work?
+## How Exactly Does the Script Work?
 
 For the curious at a high level, the script works in 5 basic parts:
 1) Import the CSV of keywords to check the rank for
@@ -89,7 +89,7 @@ For the curious at a high level, the script works in 5 basic parts:
 4) Use a HTML parser (BeautifulSoup + lxml) to search through all the HTML in the folder 'html' and find the exact info of hrefs
 5) Output a CSV of the URL ranks in the html folder
 
-### Advanced / Troubleshooting
+## Advanced / Troubleshooting
 * **I got stopped! Do I need to rerun the script for all keywords?**
 
 Nope! 
