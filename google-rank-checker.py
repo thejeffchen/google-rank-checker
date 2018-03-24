@@ -97,10 +97,12 @@ for each_file in html_files:
             list_of_ranks = []
 
             for each_result in results:
-                each_meta_title = each_result.text
-                link = each_result.find('a')
-                link = link.get('href')
-                list_of_ranks.append(link)  # Add this back in for Meta + ' / ' + each_meta_title)
+                known_invisible_element = each_result.find_parent(class_='nmcw')
+                if not known_invisible_element:
+                    each_meta_title = each_result.text
+                    link = each_result.find('a')
+                    link = link.get('href')
+                    list_of_ranks.append(link)  # Add this back in for Meta + ' / ' + each_meta_title)
             print(list_of_ranks)
 
         with open('keyword_rankings.csv', 'a') as csvfile:
