@@ -1,17 +1,17 @@
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import csv
-import time
-import random
-from bs4 import BeautifulSoup
-import csv
 import os
+import random
+import time
+
 
 # Proxy use - IP:PORT or HOST:PORT, use at your own risk. Google seems to be pretty good at detecting proxy usage, I was stopped fairly quickly. Uncomment lines 40 - 42 to use
 proxy_list = [
     '185.93.3.123:8080',
     '194.182.74.151:3128'
-] 
+]
 
 # Import CSV of keywords to check rank for
 keywords = []
@@ -34,7 +34,7 @@ for each_keyword in keywords:
     opts = webdriver.ChromeOptions()
     opts.add_argument(
       "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
-      )
+    )
 
     # Proxy Use: Uncomment the 3 lines below to enable proxies by removing the '#' symbol
     # chosen_proxy = random.choice(proxy_list)
@@ -57,14 +57,15 @@ for each_keyword in keywords:
     html = driver.page_source
 
     def listToStringWithoutBracketsOrQuotations(list1):
-        return str(list1).replace('[','').replace(']','').replace('\'','')
+        return str(list1).replace('[', '').replace(']', '').replace('\'', '')
 
     each_keyword = listToStringWithoutBracketsOrQuotations(each_keyword)
-    
+
     with open("html/" + str(each_keyword) + ".html", "w") as file:
         file.write(html)
 
-    time.sleep(random.randint(1,4))
+    # Change the rate that pages are checked here. Original settings chooses a random integer of time between 1 and 4 seconds.
+    time.sleep(random.randint(1, 4))
 
     driver.close()
     driver.quit()
@@ -94,16 +95,19 @@ for each_file in html_files:
             soup = BeautifulSoup(file, "lxml")
             results = soup.find_all("h3", class_="r")
             list_of_ranks = []
-            
+
             for each_result in results:
-                each_meta_title = each_result.text
-                link = each_result.find('a')
-                link = link.get('href')
-                list_of_ranks.append(link) # Add this back in for Meta + ' / ' + each_meta_title)
+                known_invisible_element = each_result.find_parent(class_='nmcw')
+                if not known_invisible_element:
+                    each_meta_title = each_result.text
+                    link = each_result.find('a')
+                    link = link.get('href')
+                    list_of_ranks.append(link)  # Add this back in for Meta + ' / ' + each_meta_title)
             print(list_of_ranks)
 
         with open('keyword_rankings.csv', 'a') as csvfile:
-            csvfile.write('%s,' % each_file)
+            writer = csv.writer(csvfile)
+            row = [each_file]
             for each_column in list_of_ranks:
-                csvfile.write('%s,' % each_column)
-            csvfile.write('\n')
+                row.append(each_column)
+            writer.writerow(row)
