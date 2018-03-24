@@ -97,8 +97,8 @@ for each_file in html_files:
             list_of_ranks = []
 
             for each_result in results:
-                link_in_related_questions_box = each_result.find_parent(class_='nmcw')
-                if not link_in_related_questions_box:
+                search_result_in_related_questions_box = each_result.find_parent(class_='nmcw')
+                if not search_result_in_related_questions_box:
                     each_meta_title = each_result.text
                     link = each_result.find('a')
                     link = link.get('href')
