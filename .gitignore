@@ -1,7 +1,14 @@
+# Virtual environments
 /scraper-venv/
-/html
 venv/
+
+# Jupyter notebook
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 *.ipynb
+
+# Other
 .DS_Store
+
+# HTML directory
+html/
