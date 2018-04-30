@@ -15,7 +15,6 @@ proxy_list = [
 
 # Import CSV of keywords to check rank for
 keywords = []
-errors = 0
 counter = 1
 
 with open('keywords.csv', 'rt', encoding="utf8") as f:
@@ -24,10 +23,6 @@ with open('keywords.csv', 'rt', encoding="utf8") as f:
         keywords.append(row)
 
 for each_keyword in keywords:
-    if errors > 5:
-        browser.quit()
-        break
-
     chromedriver = "chromedriver"
     os.environ["webdriver.chrome.driver"] = chromedriver
 
