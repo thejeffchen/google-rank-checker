@@ -89,6 +89,10 @@ For the curious at a high level, the script works in 5 basic parts:
 4) Use a HTML parser (BeautifulSoup + lxml) to search through all the HTML in the folder 'html' and find the exact info of hrefs
 5) Output a CSV of the URL ranks in the html folder
 
+## Want to do bulk indexation checking?
+
+Instead of putting keywords in keywords.csv, put "site:examplewebsite.com/slug" and you can see if Google has indexed the page!
+
 ## Advanced / Troubleshooting
 * **I got stopped! Do I need to rerun the script for all keywords?**
 
