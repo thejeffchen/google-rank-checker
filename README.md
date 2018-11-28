@@ -126,3 +126,7 @@ You might need to install Chromedriver:
 https://www.kenst.com/2015/03/installing-chromedriver-on-mac-osx/
 
 Note: I also wrote most of the script in a few hours so it isn't perfect, but all feedback is welcome!
+
+* ** HTML folder**
+In Linux you may have to create your own `html` folder.
+You can do it by using the command: `mkdir html`
