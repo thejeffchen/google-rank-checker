@@ -6,7 +6,7 @@ I wrote this because I work in SEO and needed real time rankings from a lot of k
 
 ## Getting Started
 
-1) Open Terminal on Mac (Press 'command + space' and type in 'Terminal')
+1) Open Terminal on *Mac* (Press 'command + space' and type in 'Terminal') [if using a different OS, please read about IMPORTANT LIMITATIONS, further down this document]
 
 2) Install the files on your desktop folder
 
@@ -75,10 +75,12 @@ python3 google-rank-checker.py
 7) Go to the HTML folder and open keywords_rankings.csv
 
 ## Important Limitations
-1) This is only for small scale rank checking, it goes at around ~6 terms a minute to be a good citizen of Google. I'm sure you can build out a large scale scraping operation with hundreds of AWS EC2 instances and thousands of proxies, but if you know how to do that, you probably don't need this script.
-2) This only looks at the 1st page of search results. This was built for a specific project and I just needed to look at the first page. I might consider writing something that goes to the other pages, but it isn't built right now.
-3) This only gives you the URLs of the first page of search results. Again, I only needed the URLs for this specific project
-4) This could be limited to personalized and/or local search since it is just opening a normal Google browser. It isn't perfect, but it will give you a good enough measure of approximately what is ranking on the first page.
+1) Current repository is ready to be used on a MAC OS X environment. If you use other environment such as Linux or Windows there's a few changes that are required to make it work.
+1.1) chromedriver binary: You need to obtain the correct `chromedriver` binary for your OS/CPU as the one included may not work. Here's where to get it from: http://chromedriver.chromium.org/downloads
+2) This is only for small scale rank checking, it goes at around ~6 terms a minute to be a good citizen of Google. I'm sure you can build out a large scale scraping operation with hundreds of AWS EC2 instances and thousands of proxies, but if you know how to do that, you probably don't need this script.
+3) This only looks at the 1st page of search results. This was built for a specific project and I just needed to look at the first page. I might consider writing something that goes to the other pages, but it isn't built right now.
+4) This only gives you the URLs of the first page of search results. Again, I only needed the URLs for this specific project
+5) This could be limited to personalized and/or local search since it is just opening a normal Google browser. It isn't perfect, but it will give you a good enough measure of approximately what is ranking on the first page.
 
 ## How Exactly Does the Script Work?
 
