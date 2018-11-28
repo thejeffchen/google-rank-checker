@@ -88,7 +88,7 @@ for each_file in html_files:
         with open(each_file, 'rb') as file:
             print(each_file)
             soup = BeautifulSoup(file, "lxml")
-            results = soup.find_all("h3", class_="r")
+            results = soup.find_all("div", class_="r")
             list_of_ranks = []
 
             for each_result in results:
