@@ -125,4 +125,7 @@ Instead of putting keywords in keywords.csv, put "site:examplewebsite.com/slug" 
 You might need to install Chromedriver: 
 https://www.kenst.com/2015/03/installing-chromedriver-on-mac-osx/
 
+* **Chromedriver not in PATH?**
+execute the following: export PATH=$PATH:.
+
 Note: I also wrote most of the script in a few hours so it isn't perfect, but all feedback is welcome!
